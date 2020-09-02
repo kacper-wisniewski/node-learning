@@ -1,0 +1,18 @@
+{
+  "name": "learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kacper-wisniewski/node-learning.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kacper-wisniewski/node-learning/issues"
+  },
+  "homepage": "https://github.com/kacper-wisniewski/node-learning#readme"
+}

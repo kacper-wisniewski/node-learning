@@ -87,31 +87,25 @@ let generatedPerson = {
   email: '',
 }
 
-const generate = [
-  Math.floor(Math.random() * 2),
-  Math.floor(Math.random() * 20),
-  Math.floor(Math.random() * 20),
-  Math.floor((Math.random() * 60)+19),
-];
+const generate = (min, max) => {
+  return Math.floor((Math.random() * max) + min);
+};
 
 if(generate[0] == 0) {
   generatedPerson.gender = 'Male';
-  generatedPerson.firstName = maleName[generate[1]];
+  generatedPerson.firstName = maleName[generate(0,20)];
 } else {
   generatedPerson.gender = 'Female';
-  generatedPerson.firstName = femaleName[generate[1]];
+  generatedPerson.firstName = femaleName[generate(0,20)];
 }
-generatedPerson.lastName = lastName[generate[2]];
-generatedPerson.age = generate[3];
+generatedPerson.lastName = lastName[generate(0,20)];
+generatedPerson.age = generate(18,68);
 generatedPerson.email = `${generatedPerson.firstName}.${generatedPerson.lastName}@gmail.com`;
 generatedPerson.email = generatedPerson.email.toLowerCase();
 
-let generateNumber;
-
 for (let i = 0; i < 9; i++) {
-  generateNumber = Math.floor((Math.random() * 9)+1);
-
-  generatedPerson.phone += `${generateNumber}`;
+  if (i!=0) generatedPerson.phone += `${generate(0,9)}`;
+  else generatedPerson.phone += `${generate(1,9)}`;
   if((i+1)%3 == 0 && (i+1) < 9) {
     generatedPerson.phone += ' ';
   }
